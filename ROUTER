@@ -1,0 +1,12 @@
+react-router
+
+1. npm i react-router
+2. Browser router - navigate from home to about page
+    steps:
+    1.wrap root component in index.js
+    2.create component to be render (home and about)
+    3.Routes can have multiple Route component
+        Route accept path which rendered when path matched and render element
+3. Using Link tag (navbar.js)
+4. Using NavLink tag (navbar.js)  
+    NavLink shows when some is active or not just by adding className at the time of running code SO STYLE IT USING ACTIVE className 
