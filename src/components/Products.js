@@ -12,6 +12,15 @@ function Products() {
                 <Link to="featured">Featured</Link>
 
                 <Link to="new">New</Link>
+
+                {/* 
+                    relative link:
+                    "/new" now this will try to get the path from home 
+
+                    // absolute link can be used as "features/new"
+
+                    <Link to="/new">New</Link>
+                */}
             </nav>
 
             <Outlet />

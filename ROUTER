@@ -30,3 +30,13 @@ react-router
     :anyThing but if any named route is present then this will be rendered
 
 9. useParams() to get the enteredId in the child components
+
+10. searchParams as "user?filter=active"
+
+11. relative link is started with "/"
+
+12. Lazy Loading : 
+    Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed. It's a way to shorten the length of the critical rendering path, which translates into reduced page load times.
+    -> DONE ON ABOUT.js
+    -> NORMALLY PAGES ARE LOADED BY DEFAULT EVEN NOT CALLED LIKE AS ABOUT PAGE
+    -> used more when data-visualisation chart developmet

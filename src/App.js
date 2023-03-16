@@ -1,6 +1,10 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import About from './components/About';
+
+// import About from './components/About';
+
+
 import Navbar from './components/Navbar';
 import OrderSummary from './components/OrderSummary';
 import NoMatch from './components/NoMatch';
@@ -10,6 +14,10 @@ import NewProduct from './components/NewProduct';
 import User from './components/User';
 import UserDetails from './components/UserDetails';
 import Admin from './components/Admin';
+
+// STEP 1 FOR dynamic import
+const LazyAbout = React.lazy(() => import("./components/About.js")) // promise is returned converted in module
+
 
 function App() {
   return (
@@ -27,7 +35,17 @@ function App() {
         <Route path='/' element={<Home />} />
 
         {/* http://localhost:3000/about */}
-        <Route path='about' element={<About />} />
+
+
+        {/* STEP2 FOR LAZY LOADING */}
+        <Route
+          path='about'
+          element={
+            // if network is too slow then this fallback text will be loaded
+            <React.Suspense fallback="Loading...">
+              <LazyAbout />
+            </React.Suspense>
+          } />
 
 
         <Route path='orderSummary' element={<OrderSummary />} />
