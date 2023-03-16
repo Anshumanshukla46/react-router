@@ -14,7 +14,7 @@ function Navbar() {
     }
 
     return (
-        <nav>
+        <nav className='primary-nav'>
             {/* inspected we can see it is anchor tag */}
             {/* NavLink shows when some is active or not just by adding className at the time of running code SO STYLE IT USING ACTIVE className */}
             <NavLink
@@ -28,6 +28,13 @@ function Navbar() {
                 style={navLinkStyles}
                 to="/about">
                 About
+            </NavLink>
+
+
+
+            {/* Products */}
+            <NavLink style={navLinkStyles} to="/products">
+                Products
             </NavLink>
         </nav>
     )

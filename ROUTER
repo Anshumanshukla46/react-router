@@ -10,3 +10,23 @@ react-router
 3. Using Link tag (navbar.js)
 4. Using NavLink tag (navbar.js)  
     NavLink shows when some is active or not just by adding className at the time of running code SO STYLE IT USING ACTIVE className 
+4. Rouer on button click (ordersummary)
+    useNavigate() : used  to move from one page to other by actionListener
+
+5. if user entered wrong route instead of only loading do some measure to tell user that it is wrong route USE PATH="*"
+
+6. nested routing like "http://localhost:3000/products/new" or ""http://localhost:3000/products/feature" here product and new/feature are nested  to each other
+    check product.js
+    1. created product in app.js
+    2. link of product in navbar.js
+    3. added nested route in app.js
+    4. link of new/feature in product.sj
+    5. used OUTLET at last in product to render the desired component in link
+
+7.  INDEX ROUTE - render this by-default (at the parent url) when product is loaded
+    <Route index element={<FeatureProducts />} />
+
+8. Dynamic Route
+    :anyThing but if any named route is present then this will be rendered
+
+9. useParams() to get the enteredId in the child components

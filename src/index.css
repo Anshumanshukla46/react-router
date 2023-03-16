@@ -13,12 +13,12 @@ code {
 }
 
 
-nav {
+.primary-nav {
   background-color: aliceblue;
   padding: 16px 32px;
 }
 
-/* check navbar tag */
+/* check navbar with link */
 nav a {
   margin-right: 16px;
 }

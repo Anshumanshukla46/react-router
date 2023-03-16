@@ -2,11 +2,22 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Navbar from './components/Navbar';
+import OrderSummary from './components/OrderSummary';
+import NoMatch from './components/NoMatch';
+import Products from './components/Products';
+import FeatureProducts from './components/FeatureProducts';
+import NewProduct from './components/NewProduct';
+import User from './components/User';
+import UserDetails from './components/UserDetails';
+import Admin from './components/Admin';
 
 function App() {
   return (
 
+    // it is fragment
     <>
+
+
       <Navbar />
       <Routes>
 
@@ -17,6 +28,47 @@ function App() {
 
         {/* http://localhost:3000/about */}
         <Route path='about' element={<About />} />
+
+
+        <Route path='orderSummary' element={<OrderSummary />} />
+
+
+
+        {/* nested routing */}
+        {/* add Outlet component inside the parent product component */}
+        <Route path='products' element={<Products />} >
+
+          {/* render this by-default when product is loaded */}
+          <Route index element={<FeatureProducts />} />
+
+          <Route path='featured' element={<FeatureProducts />} />
+
+          <Route path='new' element={<NewProduct />} />
+
+        </Route>
+
+
+        <Route path='user' element={<User />} >
+
+          {/* dynamic routing */}
+          {/* :userId => user/1 , user/2 
+            but it can be anything like "user/hello" */}
+
+          <Route path=":userId" element={<UserDetails />} />
+
+          {/* first try to find matching routes if not found then use dynamic-routing */}
+          <Route path='admin' element={<Admin />} />
+
+
+        </Route>
+
+
+
+
+
+        {/* when nothing matched use path="*" */}
+        <Route path='*' element={<NoMatch />} />
+
 
       </Routes>
     </>
