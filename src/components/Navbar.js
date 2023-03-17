@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { useAuth } from './Auth'
 // it is similar to anchor tag (check index.js)
 
 function Navbar() {
@@ -12,6 +13,8 @@ function Navbar() {
             fontWeight: isActive ? 'bolder' : "normal"
         }
     }
+
+    const auth = useAuth()
 
     return (
         <nav className='primary-nav'>
@@ -36,6 +39,23 @@ function Navbar() {
             <NavLink style={navLinkStyles} to="/products">
                 Products
             </NavLink>
+
+            <NavLink
+                style={navLinkStyles}
+                to="/profile">
+                Profile
+            </NavLink>
+
+
+            {/* show login only if user not logged in */}
+            {
+                !auth.user && (
+                    <NavLink
+                        style={navLinkStyles} to="/login">
+                        Login
+                    </NavLink>
+                )
+            }
         </nav>
     )
 }

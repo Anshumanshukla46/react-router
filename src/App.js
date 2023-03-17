@@ -14,6 +14,14 @@ import NewProduct from './components/NewProduct';
 import User from './components/User';
 import UserDetails from './components/UserDetails';
 import Admin from './components/Admin';
+import Profile from './components/Profile';
+
+// router-authorisation
+import { AuthPorvider } from './components/Auth';
+import Login from './components/Login';
+import RequireAuth from './components/RequireAuth';
+
+
 
 // STEP 1 FOR dynamic import
 const LazyAbout = React.lazy(() => import("./components/About.js")) // promise is returned converted in module
@@ -22,8 +30,10 @@ const LazyAbout = React.lazy(() => import("./components/About.js")) // promise i
 function App() {
   return (
 
-    // it is fragment
-    <>
+    // it is fragment <></>
+
+    // authorisation in the whole app
+    <AuthPorvider>
 
 
       <Navbar />
@@ -81,6 +91,20 @@ function App() {
         </Route>
 
 
+        {/* profile : route authentication */}
+        <Route
+          path='profile'
+          element={
+            <RequireAuth>
+              <Profile />
+            </RequireAuth>}
+        />
+
+        <Route
+          path='login'
+          element={<Login />}
+        />
+
 
 
 
@@ -89,7 +113,8 @@ function App() {
 
 
       </Routes>
-    </>
+
+    </AuthPorvider>
 
   );
 }

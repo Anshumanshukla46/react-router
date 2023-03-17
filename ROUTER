@@ -40,3 +40,9 @@ react-router
     -> DONE ON ABOUT.js
     -> NORMALLY PAGES ARE LOADED BY DEFAULT EVEN NOT CALLED LIKE AS ABOUT PAGE
     -> used more when data-visualisation chart developmet
+
+13. Router authentication example in e-commerce site we could have products is public but profile could only be accessible if user is logged in 
+    1. added profile in nav and app.js (protected)
+    2. setup a way to know wheather user logged in or not by providing entire context tree (login(used auth funtion to login) and logout function(navigate to redirect))
+    3. now conver whole app.js in authprovider
+    4. now create login/out functionality
